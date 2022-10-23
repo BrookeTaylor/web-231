@@ -1,2 +1,6 @@
-# web-231
-Bellevue Web 231 - Enterprise JavaScript l  
+# WEB 231 Enterprise JavaScript I
+
+## Contributors
+
+* Professor Krasso
+* Brooke Taylor 
