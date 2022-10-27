@@ -1,14 +1,12 @@
-/* 
-====================================
-; Title: Web 231 HTML CSS and JavaScript Requirements
-; Arthur: Professor Krasso
-; Date: 10/23/22
-; Modified By: Brooks
-; Description: These were all copied from the 
-; previous class, Web 200, requested to be
-; included by the Document titled: "Web 231  
-; HTML CSS and JavaScript Requirements"
-====================================
+/**
+    Title: Web 231 HTML CSS and JavaScript Requirements
+    Arthur: Professor Krasso
+    Date: 10/23/22
+    Modified By: Brooks
+    Description: These were all copied from the 
+    previous class, Web 200, requested to be
+    included by the Document titled: "Web 231  
+    HTML CSS and JavaScript Requirements"
 */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -72,4 +70,26 @@
 
 .form-field {
     padding: 20px;
+}
+
+/**
+    Title: Exercise 2.2 - Hello JavaScript
+    Author: Professor Krasso
+    Date: 10/26/2022
+    Description: This code is to style the Return link to 
+    index page. Added per assignment guidelines. 
+*/
+
+.return-home a {
+    color: #4F3674;
+    text-decoration: none;
+}
+
+.return-home a:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+}
+
+.return-home a:visited {
+    color: #3C275A;
 }
