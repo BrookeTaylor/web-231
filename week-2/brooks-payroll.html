@@ -1,0 +1,168 @@
+<!-- 
+    Title: Assignment 2.3 Values and Variables
+    Arthur: Professor Krasso
+    Date: 10/26/22
+    Modified By: Brooks
+    Description: Test your understanding of how to declare and 
+    define JavaScript variables.  
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 – Enterprise JavaScript I.</title>
+
+<!-- Link to external stylesheet. -->
+<link rel="stylesheet" href="../site.css">
+
+<!-- Link to external stylesheet. -->
+<link rel="stylesheet" href="brooks-payroll.css">
+
+<!-- Links added per guidelines set forth 
+on the document titled: Web 231 
+HTML CSS and JavaScript Requirements. -->
+        <link rel="stylesheet" href="../global.css">
+
+<!-- Google Fonts Oswald. -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+
+<!-- Whole page wrap id="container." -->
+<div id="container">
+
+<!-- First Heading "Payroll System."  CSS class of "app-header" 
+applied per the document titled, Web 231 HTML, CSS, and JavaScript 
+Requirements.  HTML id of "payroll-header" per the document 
+Web 231 Assign. -->
+<h1 id="payroll-header"  class="app-header">Payroll System</h1>
+
+<!-- Header level three for first set of Employee records. -->
+<h3>Employee record 1</h3>
+
+<!-- First unordered list. -->
+<ul>
+    <li id="txtFirstNameLudwig"></li>
+    <li id="txtLastNameBeethoven"></li>
+    <li id="txtAddressLudwig"></li>
+    <li id="txtHireDateLudwig"></li>
+    <li id="txtPayRateLudwig"></li>
+</ul>
+
+
+
+
+<!-- Header level three for second set of Employee records. -->
+<h3>Employee record 2</h3>
+
+<!-- Second unordered list. -->
+<ul>
+    <li id="txtFirstNameJohann"></li>
+    <li id="txtLastNameJohann"></li>
+    <li id="txtAddressJohann"></li>
+    <li id="txtHireDateJohann"></li>
+    <li id="txtPayRateJohann"></li>
+</ul>
+
+
+<!-- Header level three for third set of Employee records. -->
+<h3>Employee record 3</h3>
+
+<!-- Third unordered list. -->
+<ul>
+    <li id="txtFirstNameWolfgang"></li>
+    <li id="txtLastNameWolfgang"></li>
+    <li id="txtAddressWolfgang"></li>
+    <li id="txtHireDateWolfgang"></li>
+    <li id="txtPayRateWolfgang"></li>
+</ul>
+
+<!-- Return home back to Index. --> 
+<p class="return-home"><a href="../index.html">Return</a></p>
+
+
+
+<script>
+   
+/*
+;=====================================
+;  Title: Assignment 2.3 - Values and Variables
+;  Author: Professor Krasso
+;  Modified by: Brooks
+;  Date: October 30th, 2022
+;  Description: This is the JavaScript coding for the payroll.html page.
+;=====================================
+*/
+
+/**
+ * Declared variables first, set to a const as variable remains 
+ * unchanging. Here is the variable for each unordered list first name. 
+ */
+  const firstFirstName = "Ludwig"; 
+  const secondFirstName = "Johann"; 
+  const thirdFirstName = "Wolfgang";
+
+/**
+ * Second item in each unordered list, last name. 
+ */
+  const firstLastName = "Beethoven";
+  const secondLastName = "Bach";  
+  const thirdLastName = "Mozart";  
+   
+/**
+ * Third item in each unordered list, address. 
+ */
+  const firstAddress = "505 main street";
+  const secondAddress = "512 main street";  
+  const thirdAddress = "600 main street";  
+  
+/**
+ * Fourth item in each unordered list, date. I'm including some of my 
+ * 'successful' attempts in a file titled, 'attmpts.js' within this 
+ * file's directory. I went down this path of trying to select my 
+ * own date as opposed to just going with the current date, new Date(). 
+ * When I did this, much to my dismay it left the current time as well as 
+ * date displayed. From there, I figured out to .split the two by the 
+ * (',') comma. And then picked the first item of the array with the [0].
+ * Please feel free to let me know if this isn't the best approach but 
+ * it worked out for my purposes.    
+ */
+  const firstDay = new Date('1770-12-16').toLocaleString('en-US').split(',')[0];
+  const secondDay = new Date('1685-03-31').toLocaleString('en-US').split(',')[0];
+  const thirdDay = new Date('1756-01-27').toLocaleString('en-US').split(',')[0];
+
+/**
+ * Fifth and final item on our unordered list, the pay rate. Adjusted to 
+ * only show to the tenth decimal point. 
+ */
+  const firstPayRate = 18.933.toFixed(1);
+  const secondPayRate = 25.533.toFixed(1);
+  const thirdPayRate = 50.111.toFixed(1);
+
+/** 
+ * Using the DOM .getElementById selecting each of the HTML's id's and 
+ * attaching our variables by the .innerHTML property. 
+ */
+  document.getElementById("txtFirstNameLudwig").innerHTML = firstFirstName;
+  document.getElementById("txtLastNameBeethoven").innerHTML = firstLastName; 
+  document.getElementById("txtAddressLudwig").innerHTML = firstAddress;
+  document.getElementById("txtHireDateLudwig").innerHTML = firstDay;
+  document.getElementById("txtPayRateLudwig").innerHTML = firstPayRate;
+
+  document.getElementById("txtFirstNameJohann").innerHTML = secondFirstName;
+  document.getElementById("txtLastNameJohann").innerHTML = secondLastName; 
+  document.getElementById("txtAddressJohann").innerHTML = secondAddress;
+  document.getElementById("txtHireDateJohann").innerHTML = secondDay;
+  document.getElementById("txtPayRateJohann").innerHTML = secondPayRate;
+
+  document.getElementById("txtFirstNameWolfgang").innerHTML = thirdFirstName;
+  document.getElementById("txtLastNameWolfgang").innerHTML = thirdLastName; 
+  document.getElementById("txtAddressWolfgang").innerHTML = thirdAddress;
+  document.getElementById("txtHireDateWolfgang").innerHTML = thirdDay;
+  document.getElementById("txtPayRateWolfgang").innerHTML = thirdPayRate;
+
+</script>
+
+</div><!-- id="container" -->
+    </body>
+    </html>

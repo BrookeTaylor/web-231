@@ -1,0 +1,16 @@
+/**
+    Title: Assignment 2.2 - Values and Variables
+    Arthur: Professor Krasso
+    Date: 10/26/22  
+    Modified By: Brooks
+    Description: Test your understanding of how to declare and 
+    define JavaScript variables. 
+*/
+
+/** 
+    The unordered list will have a dotted border, one-pixel thickness 
+    and be red as requested. 
+*/
+ul {
+    border: 1px dotted red;
+}

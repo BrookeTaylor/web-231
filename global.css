@@ -72,24 +72,38 @@
     padding: 20px;
 }
 
+
+
 /**
     Title: Exercise 2.2 - Hello JavaScript
     Author: Professor Krasso
     Date: 10/26/2022
     Description: This code is to style the Return link to 
-    index page. Added per assignment guidelines. 
+    index page. Added .return-home per assignment guidelines. 
 */
 
+/**
+    In the class value of .return-home sets the links to have a text 
+    color and removes the underline decoration.
+*/
 .return-home a {
     color: #4F3674;
     text-decoration: none;
 }
 
+/**
+    In the class value of .return-home links on hover with change 
+    background color. 
+*/
 .return-home a:hover {
     background-color: #D6A800;
     color: #4F3674;
 }
 
+/**
+    In the class value of .return-home links previously visited will
+    have the following text color. 
+*/
 .return-home a:visited {
     color: #3C275A;
 }
