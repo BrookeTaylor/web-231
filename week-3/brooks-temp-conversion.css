@@ -1,0 +1,17 @@
+/**
+    Title: Web 231 Assignment 3 - Temperature 
+    Conversion App
+    Arthur: Professor Krasso
+    Date: 11/06/22
+    Modified By: Brooks
+    Description: Additional CSS styling requirements. 
+*/
+
+/**
+    Adds CSS styling to conversion results, center 
+    align the text and increase font size. 
+*/
+#convResults {
+    text-align: center;
+    font-size: 28px;
+}
