@@ -1,0 +1,33 @@
+/**
+    Guess Results card will have a center aligned 
+    text and text size of 28px. 
+*/
+#guessResults {
+    text-align: center;
+    font-size: 28px;
+}
+
+/**
+    Centering the h1 header to match the 
+    assignment document. 
+*/
+h1 {
+    text-align: center;
+}
+
+/**
+    Adding width and margin to match with cards 
+    as displayed in assignment document.
+*/
+.return-home {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/**
+Adding a width and balanced margin to cards.
+*/
+.card-container {
+    width: 600px;
+    margin: 3% auto 0;
+}
