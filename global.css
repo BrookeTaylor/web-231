@@ -177,3 +177,25 @@
     width: 600px;
     margin: 3% auto 0;
 }
+
+
+/**
+    Title: Drop Down Input
+    Author: Professor Krasso
+    Date: 11/20/2022
+    Description: Added CSS for menu selection, per 
+    the document titled, "Assignment 5 - Sequence Game." 
+*/
+
+/**
+    Drop down menu which adds margin and 
+    padding as well as border with a radius.
+*/
+.drop-down-menu {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

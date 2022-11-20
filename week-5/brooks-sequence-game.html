@@ -1,0 +1,259 @@
+<!-- 
+    Title: Assignment 5.2 Sequence Game
+    Arthur: Professor Krasso
+    Date: 11/20/22
+    Modified By: Brooks
+    Description: JavaScript if, else if, else conditional statements.  
+    Also working with do, while statements.   
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- title page "WEB 231 - Enterprise JavaScript I." -->
+        <title>WEB 231 – Enterprise JavaScript I.</title>
+
+<!-- Link to external stylesheet. -->
+<link rel="stylesheet" href="brooks-sequence-game.css">
+
+<!-- Links added per guidelines set forth 
+on the document titled: Web 231 
+HTML CSS and JavaScript Requirements. -->
+        <link rel="stylesheet" href="../global.css">
+
+<!-- Google Fonts Oswald. -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+
+<!-- Whole page wrap id="container." -->
+<div id="container">
+
+
+    <!-- First Heading "Welcome to the Temperature Conversion App!"  
+CSS class of "app-header" applied per the document titled, 
+Web 231 HTML, CSS, and JavaScript Requirements.  Web 231 Assign. -->
+<h1 class="app-header">Welcome to the sequence game!</h1>
+
+
+<!-- Creating a div wrapper around entire card as requested. -->
+<div id="sequenceSelectionForm" class="card-container">
+
+    <!-- Adding card class to give box shadow effect. -->    
+    <div class="card">
+
+        <!-- Card class title to increase size and add color. -->
+        <div class="card-title">Sequence Selection Form</div>
+
+        <!--Class card-content to add padding. -->
+        <div class="card-content">
+
+            <!-- Displays form class in a single auto formatted column. -->    
+            <div class="form">    
+
+
+                <!-- The form-field class adds padding. -->
+                <div class="form-field">
+
+                    <!-- Created a label for the drop down input. -->
+                    <label for="sequence">Choose a number sequence:</label>
+
+                    <!-- Drop down menu for out selection. -->
+                    <select id="sequence" class="drop-down-menu">
+                        <option value="select">--Select--</option>
+                        <option value="fibonacci">Fibonacci Sequence</option>
+                        <option value="even">Even Numbers</option>
+                        <option value="odd">Odd Numbers</option>
+                    </select>
+
+                </div><!-- ***** /.form-field ***** -->
+
+
+                <!-- The form-field class adds padding. -->
+                <div class="form-field">
+            
+                <!-- This is a button with an id to help us find with our script later. -->
+                <button onclick="myFunction()" type="button" id="btnDisplaySequence" class="btn btn-primary full-width">Display Sequence</button>
+
+                </div><!-- ***** /.form field ***** -->
+
+
+            </div><!-- ***** /.form ***** -->    
+        </div><!-- ***** /.card-content ***** -->    
+    </div><!-- ***** /.card ***** -->     
+</div><!-- ***** /#card-container" ***** -->
+
+
+<!-- Creating a div wrapper around entire card as requested. -->
+<div id="resultsCard" class="card-container">
+    
+    <!-- Adding card class to give box shadow effect. -->
+    <div class="card">
+        
+        <!-- Card class title to increase size and add color. -->
+        <div class="card-title">Results</div>
+
+        <!--Class card-content to add padding. -->
+        <div class="card-content">
+
+            <!-- Displays the results from our script. -->
+            <p id="results"></p>
+
+        </div><!-- ***** /.card-content ***** -->
+    </div><!-- ***** /.card ***** -->
+</div><!-- ***** /#card-container ***** -->
+
+
+<!-- Return home back to Index. --> 
+<div class="return-home"><a href="../index.html">Return</a></div>
+
+
+<script>
+/*
+==============================================
+; Title: JavaScript if, else, and else if. Do, while. 
+; Author: W3Schools
+; Date: 11/20/2022
+; Description: Discovered this site which helped 
+; me draft this code below. 
+; https://www.w3schools.com/js/js_if_else.asp 
+;==============================================
+*/
+
+/* 
+ * Created a function that runs an if, else if, else statement 
+ * which selects results from each of their own functions. 
+ * Added a variable for our users choice value and for the 
+ * result of our function. 
+*/
+function myFunction() {
+  let choice = document.getElementById("sequence").value;    
+  let result; 
+
+if (choice == "fibonacci") {
+  result = fibFunction();
+} else if (choice == "even") {
+  result = evenFunction();
+} else if (choice == "odd") {
+  result = oddFunction();
+} else {
+  alert('Invalid selection, please try again!');
+}
+  document.getElementById("results").innerHTML = result;
+}
+
+/*
+==============================================
+; Title: Assignment 5 - Sequence Game. 
+; Author: Prof Krasso. 
+; Date: 11/20/2022
+; Description: Drafted based off the guidelines  
+; found in the document for the current 
+; homework assignment.  
+;==============================================
+*/
+
+/* 
+ * Created a function to run our Fibonacci 
+ * Sequence based off the directions in 
+ * current assignment, Assignment 5 - 
+ * Sequence Game. 
+*/ 
+function fibFunction() {
+  let num1 = 0; 
+  let num2 = 1; 
+  let next = 0; 
+  let fibonacciSequenceText = "";
+
+while (next  <= 40) {
+  fibonacciSequenceText += num1 + ", ";                    
+  next = num1 + num2;
+  num1 = num2;
+  num2 = next;                  
+}
+  return fibonacciSequenceText.slice(0, -2);
+}
+
+
+/*
+==============================================
+; Title: JavaScript do...while Loop. 
+; Author: w3schools. 
+; Date: 11/20/2022
+; Description: Got help drafting this code by 
+; using the examples from this page.
+; https://www.w3schools.com/jsref/jsref_dowhile.asp  
+;==============================================
+*/
+
+/*
+==============================================
+; Title: Output even numbers in the loop. 
+; Author: JAVASCRIPT.INFO. 
+; Date: 11/20/2022
+; Description: Got help drafting this code by 
+; using the examples from this page.
+; https://javascript.info/task/for-even  
+;==============================================
+*/
+
+/*
+ * Created a function to run if our user chooses even numbers. 
+ * This function runs numbers even up until 20. 
+*/
+function evenFunction() {
+  let text = "";
+  let i = 0;
+  
+do {
+  if(i % 2 == 0)
+    text += i + ", ";
+    i++;
+}
+  while (i < 20);
+  return text.slice(0, -2); 
+}
+
+
+/*
+==============================================
+; Title: JavaScript do...while Loop. 
+; Author: w3schools. 
+; Date: 11/20/2022
+; Description: Got help drafting this code by 
+; using the examples from this page.
+; https://www.w3schools.com/jsref/jsref_dowhile.asp  
+;==============================================
+*/
+
+/*
+==============================================
+; Title: Output even numbers in the loop. 
+; Author: JAVASCRIPT.INFO. 
+; Date: 11/20/2022
+; Description: Got help drafting this code by 
+; using the examples from this page.
+; https://javascript.info/task/for-even  
+;==============================================
+*/
+
+/*
+ * Created a function to run if our user chooses even numbers. 
+ * This function runs numbers odd up until 20. 
+*/
+function oddFunction() {
+  let text = "";
+  let i = 1;
+do {
+  if(i % 2 == 1)
+  text += i + ", ";
+  i++;
+}
+  while (i < 20);
+  return text.slice(0, -2);
+}
+
+</script>
+</div><!-- ***** /#container ***** -->
+</body>
+</html>
