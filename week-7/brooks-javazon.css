@@ -1,0 +1,106 @@
+/**
+    Title: Assignment 7.2 - Javazon
+    Author: Professor Krasso
+    Date: 12/04/22
+    Description: Using same CSS Guide from previous 
+    assignment. Adds margin and center for a 
+    cleaner look. 
+*/
+
+
+/**
+    Result answers will have a center aligned 
+    text and text size of 28px. 
+*/
+#results {
+    text-align: center;
+    font-size: 28px;
+}
+
+/**
+    Centering the h1 header to match the 
+    assignment document. 
+*/
+h1 {
+    text-align: center;
+}
+
+/**
+    Adding width and margin to match with cards 
+    as displayed in assignment document.
+*/
+.return-home {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/**
+    Adding a width and balanced margin to cards.
+*/
+.card-container {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+
+/**
+    Title: Assignment 7.2 - Javason
+    Author: Professor Krasso
+    Date: 12/04/22
+    Description: Reusing all the table styling
+    from assignment 6. 
+*/
+
+/**
+    Set our two cards for the books and authors display to 
+    none, so that they're hidden.
+*/
+
+
+/**
+    Set the border to collapse, increased the width to fill out 
+    the width of the card element and added a margin to the bottom.
+*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/**
+    For our table header, we added padding, set the text-alignment 
+    to the left, then we added background color and a text color.
+*/
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: white;
+}
+
+/**
+    Added border to our table header and data cells. 
+    I didn't notice in the document it specifically adding 
+    padding to the cells but I thought it made it look 
+    more like the document appearance and easier to read too. 
+*/
+td, th {
+    border: 1px solid #ddd;
+    padding: .5em;
+}
+
+/**
+    When hovering over a table row we added a new background and 
+    text color while also changing the mouse cursor to a pointer.
+*/
+tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+
+
+
+

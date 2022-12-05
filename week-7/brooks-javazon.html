@@ -1,0 +1,452 @@
+<!-- 
+    Title: Assignment 7.2 Javazon
+    Arthur: Professor Krasso
+    Date: 12/04/22
+    Modified By: Brooks
+    Description: JavaScript switches and classes.     
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- title page "WEB 231 - Enterprise JavaScript I." -->
+        <title>WEB 231 – Enterprise JavaScript I.</title>
+
+<!-- Link to external stylesheet. -->
+<link rel="stylesheet" href="brooks-javazon.css">
+
+<!-- Links added per guidelines set forth 
+on the document titled: Web 231 
+HTML CSS and JavaScript Requirements. -->
+        <link rel="stylesheet" href="../global.css">
+
+<!-- Google Fonts Oswald. -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+
+<!-- Whole page wrap id="container." -->
+<div id="container">
+
+
+
+    <!-- First Heading "Welcome to the Javazon App!"  
+CSS class of "app-header" applied per the document titled, 
+Web 231 HTML, CSS, and JavaScript Requirements.  Web 231 Assign. -->
+<h1 class="app-header">Welcome to the Javazon App!</h1>
+
+
+
+<!-- Creating a div wrapper around entire card as requested. -->
+<div id="javazonSelection" class="card-container">
+
+    <!-- Adding card class to give box shadow effect. -->    
+    <div class="card">
+
+        <!-- Card class title to increase size and add color. -->
+        <div class="card-title">Javazon Selection Form</div>
+
+        <!--Class card-content to add padding. -->
+        <div class="card-content">
+
+            <!-- Displays form class in a single auto formatted column. -->    
+            <div class="form">    
+
+
+                <!-- The form-field class adds padding. -->
+                <div class="form-field">
+
+                    <!-- Created a label for the drop down input. -->
+                    <label for="listing">Choose a listing</label>
+
+                    <!-- Drop down menu for our selection. -->
+                    <select id="listing" class="drop-down-menu">
+                        <option value="select">--Select--</option>
+                        <option value="products">Products</option>
+                        <option value="services">Services</option>
+                        <option value="employees">Employees</option>
+                    </select>
+
+                </div><!-- ***** /.form-field ***** -->
+
+
+                <!-- The form-field class adds padding. -->
+                <div class="form-field">
+            
+                <!-- This is a button with an id to help us find with our script later. -->
+                <button onclick="myFunction()" type="button" id="btnDisplayListing" class="btn btn-primary full-width">Display Listing</button>
+
+                </div><!-- ***** /.form field ***** -->
+
+
+            </div><!-- ***** /.form ***** -->    
+        </div><!-- ***** /.card-content ***** -->    
+    </div><!-- ***** /.card ***** -->     
+</div><!-- ***** /#card-container" ***** -->
+
+
+
+<!-- Return home back to Index. --> 
+<div class="return-home"><a href="../index.html">Return</a></div>
+
+
+
+<!-- Creating a div wrapper with an id of "productsCard". -->
+<div id="productsCard" class="card-container">
+    
+    <!-- Adding card class to give box shadow effect. -->
+    <div class="card">
+        
+        <!-- Card class title to increase size and add color. -->
+        <div class="card-title">Javazon Products</div>
+
+        <!--Class card-content to add padding. -->
+        <div class="card-content">
+
+            <!-- Product table. -->
+            <table>
+            <tbody>
+                <tr>
+                    <th>Product ID</th><th>Description</th><th>Price</th><th>Quantity</th><th>Total Value</th>
+                </tr>
+                <tr>
+                    <td id="prodIdOne"></td><td id="prodDescriptionOne"></td><td id="prodPriceOne"></td><td id="prodQuantityOne"></td><td id="prodTotalValueOne"></td>
+                </tr>
+                <tr>
+                    <td id="prodIdTwo"></td><td id="prodDescriptionTwo"></td><td id="prodPriceTwo"></td><td id="prodQuantityTwo"></td><td id="prodTotalValueTwo"></td>
+                </tr>
+                <tr>
+                    <td id="prodIdThree"></td><td id="prodDescriptionThree"></td><td id="prodPriceThree"></td><td id="prodQuantityThree"></td><td id="prodTotalValueThree"></td>
+                </tr>
+                <tr>
+                    <td id="prodIdFour"></td><td id="prodDescriptionFour"></td><td id="prodPriceFour"></td><td id="prodQuantityFour"></td><td id="prodTotalValueFour"></td>
+                </tr>
+                <tr>
+                    <td id="prodIdFive"></td><td id="prodDescriptionFive"></td><td id="prodPriceFive"></td><td id="prodQuantityFive"></td><td id="prodTotalValueFive"></td>
+                </tr>
+            </tbody>
+            </table>
+
+        </div><!-- ***** /.card-content ***** -->
+    </div><!-- ***** /.card ***** -->
+</div><!-- ***** /#card-container #products ***** -->
+
+
+
+<!-- Creating a div wrapper with an id of "servicesCard". -->
+<div id="servicesCard" class="card-container">
+    
+    <!-- Adding card class to give box shadow effect. -->
+    <div class="card">
+        
+        <!-- Card class title to increase size and add color. -->
+        <div class="card-title">Javazon Services</div>
+
+        <!--Class card-content to add padding. -->
+        <div class="card-content">
+
+            <!-- Service table. -->
+            <table>
+            <tbody>
+                <tr>
+                    <th>Service ID</th><th>Description</th><th>Hourly Rate</th><th>Minimum Billable Hours</th>
+                </tr>
+                <tr>
+                    <td id="serviceIdOne"></td><td id="serviceDescriptionOne"></td><td id="serviceHourlyOne"></td><td id="serviceBillOne"></td>
+                </tr>
+                <tr>
+                    <td id="serviceIdTwo"></td><td id="serviceDescriptionTwo"></td><td id="serviceHourlyTwo"></td><td id="serviceBillTwo"></td>
+                </tr>
+                <tr>
+                    <td id="serviceIdThree"></td><td id="serviceDescriptionThree"></td><td id="serviceHourlyThree"></td><td id="serviceBillThree"></td>
+                </tr>
+            </tbody>
+            </table>
+
+        </div><!-- ***** /.card-content ***** -->
+    </div><!-- ***** /.card ***** -->
+</div><!-- ***** /#card-container #services ***** -->
+
+
+
+<!-- Creating a div wrapper with an id of "employeesCard". -->
+<div id="employeesCard" class="card-container">
+    
+    <!-- Adding card class to give box shadow effect. -->
+    <div class="card">
+        
+        <!-- Card class title to increase size and add color. -->
+        <div class="card-title">Javazon Employees</div>
+
+        <!--Class card-content to add padding. -->
+        <div class="card-content">
+
+            <!-- Employee table. -->
+            <table>
+            <tbody>
+                <tr>
+                    <th>Employee ID</th><th>Last Name</th><th>First Name</th><th>Salary</th>
+                </tr>
+                <tr>
+                    <td id="empIdOne"></td><td id="empLnOne"></td><td id="empFnOne"></td><td id="empSalaryOne"></td>
+                </tr>
+                <tr>
+                    <td id="empIdTwo"></td><td id="empLnTwo"></td><td id="empFnTwo"></td><td id="empSalaryTwo"></td>
+                </tr>
+                <tr>
+                    <td id="empIdThree"></td><td id="empLnThree"></td><td id="empFnThree"></td><td id="empSalaryThree"></td>
+                </tr>
+                <tr>
+                    <td id="empIdFour"></td><td id="empLnFour"></td><td id="empFnFour"></td><td id="empSalaryFour"></td>
+                </tr>
+                <tr>
+                    <td id="empIdFive"></td><td id="empLnFive"></td><td id="empFnFive"></td><td id="empSalaryFive"></td>
+                </tr>
+            </tbody>
+            </table>
+
+        </div><!-- ***** /.card-content ***** -->
+    </div><!-- ***** /.card ***** -->
+</div><!-- ***** /#card-container #employees ***** -->
+
+
+
+
+
+<script>
+
+/*
+==============================================
+; Title: JavaScript Switch & Classes.  
+; Author: W3Schools
+; Date: 12/04/2022
+; Description: Discovered this site which helped 
+; me draft this code below. 
+; https://www.w3schools.com/js/js_switch.asp & 
+; https://www.w3schools.com/js/js_classes.asp
+;==============================================
+*/
+
+
+
+/**
+ * Created our Product class to help us create 
+ * our product objects. Added four properties to 
+ * the new variables and a method to calculate the 
+ * total value of price multiplied by quantity.  
+ */
+class Product {
+    constructor(id, description, price, quantity) {
+        this.id = id; 
+        this.description = description; 
+        this.price = price; 
+        this.quantity = quantity; 
+    }
+    totalValue() {
+        return this.price * this.quantity;
+    }
+}
+
+/**
+ * Created our Services class to help us create 
+ * our services objects. Added properties per the 
+ * assignment. 
+ */
+class Services {
+    constructor(id, description, hourlyRate, min) {
+        this.id = id; 
+        this.description = description; 
+        this.hourlyRate = hourlyRate;
+        this.min = min;
+    }
+}
+
+/**
+ * Created our Employee class to help us create 
+ * our employee objects. Added properties per the 
+ * assignment. 
+ */
+class Employee {
+    constructor(id, firstName, lastName, salary) {
+        this.id = id; 
+        this.firstName = firstName; 
+        this.lastName = lastName;
+        this.salary = salary; 
+    }
+}
+
+
+
+/**
+ * By using our classes stated prior to this, created 
+ * five new product objects. Added our id, description, 
+ * price, and quantity values. 
+ */
+const gettingMean = new Product(1617294756, "Getting Mean with Mongo, Express, Angular, & Node", 49.99, 5);
+const angularDev = new Product(1617295345, "Angular Development with TypeScript", 32.49, 4);
+const expressNode = new Product(1617292427, "Express in Action: Writing, building, and testing Node.js applications", 39.99, 3);
+const mongoDB = new Product(1491954469, "MongoDB: The Definitive Guide: Powerful and Scalable Data Storage", 26.41, 2);
+const devOps = new Product(1950508404, "The DevOps Handbook: How to Create World-Class Agility, Reliability, & Security in Technology Organizations", 28.49, 5);
+
+/**
+ * Created three new Services objects. Added id, 
+ * description, hourly rate, and billable hours. 
+ */ 
+const webDesign = new Services(100, "Website Design", 150, 25);
+const devOpsConslt = new Services(101, "DevOps Consulting", 125, 50);
+const databaseDesign = new Services(102, "Database Design", 125, 15);
+
+/**
+ * Created five new Employee objects. Added 
+ * id, first name, last name, and salary. 
+ */
+const ludwig = new Employee(1007, "Ludwig", "Beethoven", 13.99);
+const johann = new Employee(1008, "Johann", "Bach", 22.3);
+const wolfgang = new Employee(1009, "Wolfgang", "Mozart", 19.5);
+const johannes = new Employee(1010, "Johannes", "Brahms", 12);
+const joseph = new Employee(1011, "Joseph", "Haydn", 32.5); 
+
+ 
+/**
+ * Added a variable to select the HTML id's for our 
+ * three selection cards. 
+ */
+const products = document.getElementById("productsCard");
+const services = document.getElementById("servicesCard");
+const employees = document.getElementById("employeesCard");
+
+
+/**
+ *  With each of our new variables selecting the 
+ * table's cards we set the display to none on load. 
+ */
+products.style.display = "none";
+services.style.display = "none";
+employees.style.display = "none";
+
+
+/**
+ * Set each of our table data cells with the corresponding data. 
+ * Below is Product table. 
+ */
+document.getElementById("prodIdOne").innerHTML = gettingMean.id;
+document.getElementById("prodDescriptionOne").innerHTML = gettingMean.description;
+document.getElementById("prodPriceOne").innerHTML = gettingMean.price;
+document.getElementById("prodQuantityOne").innerHTML = gettingMean.quantity;
+document.getElementById("prodTotalValueOne").innerHTML = gettingMean.totalValue().toFixed(2);
+
+document.getElementById("prodIdTwo").innerHTML = angularDev.id;
+document.getElementById("prodDescriptionTwo").innerHTML = angularDev.description;
+document.getElementById("prodPriceTwo").innerHTML = angularDev.price;
+document.getElementById("prodQuantityTwo").innerHTML = angularDev.quantity;
+document.getElementById("prodTotalValueTwo").innerHTML = angularDev.totalValue().toFixed(2);
+
+document.getElementById("prodIdThree").innerHTML = expressNode.id;
+document.getElementById("prodDescriptionThree").innerHTML = expressNode.description;
+document.getElementById("prodPriceThree").innerHTML = expressNode.price;
+document.getElementById("prodQuantityThree").innerHTML = expressNode.quantity;
+document.getElementById("prodTotalValueThree").innerHTML = expressNode.totalValue().toFixed(2);
+
+document.getElementById("prodIdFour").innerHTML = mongoDB.id;
+document.getElementById("prodDescriptionFour").innerHTML = mongoDB.description;
+document.getElementById("prodPriceFour").innerHTML = mongoDB.price;
+document.getElementById("prodQuantityFour").innerHTML = mongoDB.quantity;
+document.getElementById("prodTotalValueFour").innerHTML = mongoDB.totalValue().toFixed(2);
+
+document.getElementById("prodIdFive").innerHTML = devOps.id;
+document.getElementById("prodDescriptionFive").innerHTML = devOps.description;
+document.getElementById("prodPriceFive").innerHTML = devOps.price;
+document.getElementById("prodQuantityFive").innerHTML = devOps.quantity;
+document.getElementById("prodTotalValueFive").innerHTML = devOps.totalValue().toFixed(2);
+
+
+/**
+ * Set each of our table data cells with the corresponding data. 
+ * Below is Service table. 
+ */
+document.getElementById("serviceIdOne").innerHTML = webDesign.id;
+document.getElementById("serviceDescriptionOne").innerHTML = webDesign.description;
+document.getElementById("serviceHourlyOne").innerHTML = webDesign.hourlyRate;
+document.getElementById("serviceBillOne").innerHTML = webDesign.min;
+
+document.getElementById("serviceIdTwo").innerHTML = devOpsConslt.id;
+document.getElementById("serviceDescriptionTwo").innerHTML = devOpsConslt.description;
+document.getElementById("serviceHourlyTwo").innerHTML = devOpsConslt.hourlyRate;
+document.getElementById("serviceBillTwo").innerHTML = devOpsConslt.min;
+
+document.getElementById("serviceIdThree").innerHTML = databaseDesign.id;
+document.getElementById("serviceDescriptionThree").innerHTML = databaseDesign.description;
+document.getElementById("serviceHourlyThree").innerHTML = databaseDesign.hourlyRate;
+document.getElementById("serviceBillThree").innerHTML = databaseDesign.min;
+
+
+/**
+ * Set each of our table data cells with the corresponding data. 
+ * Below is Employee table. 
+ */
+document.getElementById("empIdOne").innerHTML = ludwig.id;
+document.getElementById("empLnOne").innerHTML = ludwig.lastName;
+document.getElementById("empFnOne").innerHTML = ludwig.firstName;
+document.getElementById("empSalaryOne").innerHTML = ludwig.salary.toFixed(2);
+
+document.getElementById("empIdTwo").innerHTML = johann.id;
+document.getElementById("empLnTwo").innerHTML = johann.lastName;
+document.getElementById("empFnTwo").innerHTML = johann.firstName;
+document.getElementById("empSalaryTwo").innerHTML = johann.salary.toFixed(2);
+
+document.getElementById("empIdThree").innerHTML = wolfgang.id;
+document.getElementById("empLnThree").innerHTML = wolfgang.lastName;
+document.getElementById("empFnThree").innerHTML = wolfgang.firstName;
+document.getElementById("empSalaryThree").innerHTML = wolfgang.salary.toFixed(2);
+
+document.getElementById("empIdFour").innerHTML = johannes.id;
+document.getElementById("empLnFour").innerHTML = johannes.lastName;
+document.getElementById("empFnFour").innerHTML = johannes.firstName;
+document.getElementById("empSalaryFour").innerHTML = johannes.salary.toFixed(2);
+
+document.getElementById("empIdFive").innerHTML = joseph.id;
+document.getElementById("empLnFive").innerHTML = joseph.lastName;
+document.getElementById("empFnFive").innerHTML = joseph.firstName;
+document.getElementById("empSalaryFive").innerHTML = joseph.salary.toFixed(2);
+
+
+
+/**
+ * When our button is clicked, our function named "myFunction" 
+ * will activate and display the whichever table has been 
+ * selected. The other tables will remain hidden. 
+ */
+function myFunction() {
+    let choice = document.getElementById("listing").value;
+    let result;
+
+    switch (choice) {
+        case "products": 
+            result = productsCard.style.display = "block";
+                     servicesCard.style.display = "none";
+                     employeesCard.style.display = "none";
+            break;
+        case "services":
+            result = productsCard.style.display = "none";
+                     servicesCard.style.display = "block";
+                     employeesCard.style.display = "none"; 
+            break;
+        case "employees":
+            result = productsCard.style.display = "none";
+                     servicesCard.style.display = "none";
+                     employeesCard.style.display = "block";
+            break;
+        default:
+            result = productsCard.style.display = "none";
+                     servicesCard.style.display = "none";
+                     employeesCard.style.display = "none";
+            alert("Invalid selection, please try again!");
+    }
+}
+
+
+
+</script>
+</div><!-- ***** /#container ***** -->
+</body>
+</html>
